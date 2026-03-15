@@ -2,19 +2,18 @@ import json
 import boto3
 
 dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('gabriel-muller-resume-visitor-counter-v1')
+table = dynamodb.Table('resume-visitor-counter')
 
 def lambda_handler(event, context):
 
     response = table.update_item(
-        Key={'id': 'visits'},
-        UpdateExpression="SET #c = #c + :inc",
-        ExpressionAttributeNames={'#c': 'count'},
+        Key={'id': 'visitors'},
+        UpdateExpression="ADD visitor_count :inc",
         ExpressionAttributeValues={':inc': 1},
         ReturnValues="UPDATED_NEW"
     )
 
-    count = int(response['Attributes']['count'])
+    count = int(response['Attributes']['visitor_count'])
 
     return {
         'statusCode': 200,
