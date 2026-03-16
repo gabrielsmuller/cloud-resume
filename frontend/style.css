@@ -118,3 +118,22 @@ footer {
     font-weight: bold;
     color: #2563eb;
 }
+
+/* Language Toggle Button */
+.lang-btn {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    color: #cbd5e1;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: #cbd5e1;
+    color: #0f172a;
+}
