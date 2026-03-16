@@ -13,8 +13,14 @@
 <body>
 
     <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <a href="https://www.credly.com/badges/e10c1c67-1c09-4da0-9be6-970194a67f16/public_url" target="_blank">
+                <img src="aws-saa-badge.png" alt="AWS Certified Solutions Architect" style="width: 100px; height: auto;">
+            </a>
+            <button id="lang-toggle" onclick="toggleLanguage()" style="cursor: pointer; padding: 5px 10px; border-radius: 5px;">🇧🇷 PT</button>
+        </div>
         <h1>Gabriel Siqueira Müller</h1>
-        <p><strong>Computer Engineer | Cloud Engineer</strong></p>
+        <p><strong data-i18n="job_title">Computer Engineer | Cloud Engineer</strong></p>
         <p>AWS Certified Solutions Architect – Associate</p>
 
         <p>
@@ -27,8 +33,8 @@
     <main>
 
         <section id="summary">
-            <h2>Summary</h2>
-            <p>
+            <h2 data-i18n="summary_header">Summary</h2>
+            <p data-i18n="summary_text">
                 Computer Engineer with professional experience in IT infrastructure and backend development,
                 currently specializing in AWS cloud architecture and infrastructure automation. Hands-on experience 
                 building serverless applications and deploying infrastructure using Terraform and CI/CD pipelines.
@@ -36,63 +42,63 @@
         </section>
 
         <section id="skills">
-            <h2>Core Competencies</h2>
+            <h2 data-i18n="skills_header">Core Competencies</h2>
             <ul>
-                <li><strong>Cloud & DevOps:</strong> AWS, Linux, Docker, Terraform, Git, CI/CD (GitHub Actions)</li>
-                <li><strong>Programming:</strong> Python, C, C++</li>
-                <li><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
-                <li><strong>Databases:</strong> SQL, PostgreSQL, NoSQL</li>
+                <li data-i18n="skills_cloud"><strong>Cloud & DevOps:</strong> AWS, Linux, Docker, Terraform, Git, CI/CD (GitHub Actions)</li>
+                <li data-i18n="skills_prog"><strong>Programming:</strong> Python, C, C++</li>
+                <li data-i18n="skills_net"><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
+                <li data-i18n="skills_db"><strong>Databases:</strong> SQL, PostgreSQL, NoSQL</li>
             </ul>
         </section>
 
         <section id="cloud-projects">
-            <h2>Cloud Projects</h2>
+            <h2 data-i18n="cloud_projects_header">Cloud Projects</h2>
             <article>
-                <h3>The Cloud Resume Challenge (AWS)</h3>
-                <p>Developed a serverless cloud-based resume application deployed on AWS.</p>
+                <h3 data-i18n="crc_title">The Cloud Resume Challenge (AWS)</h3>
+                <p data-i18n="crc_desc">Developed a serverless cloud-based resume application deployed on AWS.</p>
                 <ul>
-                    <li>Static website hosted on Amazon S3 and globally distributed via CloudFront with HTTPS</li>
-                    <li>Serverless backend implemented with AWS Lambda (Python) and Amazon API Gateway</li>
-                    <li>Visitor counter stored in Amazon DynamoDB and exposed through a REST API</li>
-                    <li>Infrastructure provisioned using Terraform with CI/CD automation via GitHub Actions</li>
+                    <li data-i18n="crc_bullet1">Static website hosted on Amazon S3 and globally distributed via CloudFront with HTTPS</li>
+                    <li data-i18n="crc_bullet2">Serverless backend implemented with AWS Lambda (Python) and Amazon API Gateway</li>
+                    <li data-i18n="crc_bullet3">Visitor counter stored in Amazon DynamoDB and exposed through a REST API</li>
+                    <li data-i18n="crc_bullet4">Infrastructure provisioned using Terraform with CI/CD automation via GitHub Actions</li>
                 </ul>
                 <p>
-                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank">Github Repository & Documentation</a>
+                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank" data-i18n="crc_link">Github Repository & Documentation</a>
                 </p>
             </article>
         </section>
 
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2 data-i18n="experience_header">Professional Experience</h2>
             <article>
-                <h3>IT Technical Analyst & Developer</h3>
-                <p><strong>Vertys Energy Group</strong> | July 2023 – Present</p>
+                <h3 data-i18n="vertys_title">IT Technical Analyst & Developer</h3>
+                <p><strong data-i18n="vertys_company">Vertys Energy Group</strong> <span data-i18n="vertys_date">| July 2023 – Present</span></p>
                 <ul>
-                    <li>Developed API integrations between Sankhya ERP and sales/e-commerce platforms, automating data synchronization</li>
-                    <li>Designed and developed internal web applications including the company website and an e-commerce platform</li>
-                    <li>Assisted in deployment of a Linux-based server and implemented secure network file shares</li>
-                    <li>Maintained network infrastructure and resolved 680+ technical support tickets (4.91/5 satisfaction)</li>
+                    <li data-i18n="vertys_bullet1">Developed API integrations between Sankhya ERP and sales/e-commerce platforms, automating data synchronization</li>
+                    <li data-i18n="vertys_bullet2">Designed and developed internal web applications including the company website and an e-commerce platform</li>
+                    <li data-i18n="vertys_bullet3">Assisted in deployment of a Linux-based server and implemented secure network file shares</li>
+                    <li data-i18n="vertys_bullet4">Maintained network infrastructure and resolved 680+ technical support tickets (4.91/5 satisfaction)</li>
                 </ul>
             </article>
         </section>
 
         <section id="education">
-            <h2>Education</h2>
+            <h2 data-i18n="education_header">Education</h2>
             <article>
-                <h3>Bachelor of Science in Computer Engineering</h3>
-                <p>Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: 2026</p>
+                <h3 data-i18n="edu_degree">Bachelor of Science in Computer Engineering</h3>
+                <p data-i18n="edu_school">Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: 2026</p>
             </article>
         </section>
 
         <section id="other-projects">
-            <h2>Other Technical Projects</h2>
+            <h2 data-i18n="other_projects_header">Other Technical Projects</h2>
             <article>
-                <h3>Autonomous and Hybrid Photovoltaic Systems Sizing Algorithm</h3>
-                <p>Developed an algorithm to optimize the sizing and efficiency of autonomous and hybrid solar energy systems.</p>
+                <h3 data-i18n="tcc_title">Autonomous and Hybrid Photovoltaic Systems Sizing Algorithm</h3>
+                <p data-i18n="tcc_desc">Developed an algorithm to optimize the sizing and efficiency of autonomous and hybrid solar energy systems.</p>
             </article>
             <article>
-                <h3>Full-Stack Web Applications</h3>
-                <p>Development of responsive web applications using modern frontend frameworks and backend services for authentication and database integration.</p>
+                <h3 data-i18n="web_apps_title">Full-Stack Web Applications</h3>
+                <p data-i18n="web_apps_desc">Development of responsive web applications using modern frontend frameworks and backend services for authentication and database integration.</p>
             </article>
         </section>
 
@@ -101,11 +107,11 @@
     <footer>
         <hr>
         <p>
-            You are visitor number: <span id="counter">Loading...</span>
+            <span data-i18n="footer_text">You are visitor number: </span><span id="counter">Loading...</span>
         </p>
     </footer>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
