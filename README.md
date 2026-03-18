@@ -1,114 +1,162 @@
 # Cloud Resume – AWS Serverless Project
 
-This project is my implementation of the **Cloud Resume Challenge**, a hands-on project designed to demonstrate practical cloud engineering skills using AWS.
+This project is my implementation of the **Cloud Resume Challenge**, designed to demonstrate real-world cloud engineering and DevOps skills using AWS.
 
-The goal of the project is to build and deploy a cloud-based resume website using a fully serverless architecture.
+It showcases a **fully serverless, production-style architecture** with Infrastructure as Code and CI/CD automation.
 
 ---
 
-# Project Overview
+# Live Demo
 
-The resume is a static website hosted on AWS and globally distributed using a CDN.
-It also includes a serverless backend that counts and stores website visits.
+https://gabrielsmuller.dev
 
-Architecture overview:
+---
+
+# Architecture
 
 ```
-User Browser
-     │
-     ▼
-CloudFront (CDN + HTTPS)
-     │
-     ▼
-S3 (Static Website Hosting)
-     │
-     ▼
-API Gateway
-     │
-     ▼
-Lambda (Python)
-     │
-     ▼
-DynamoDB (Visitor Counter)
+                GitHub
+                   │
+                   ▼
+        GitHub Actions (CI/CD)
+                   │
+                   ▼
+User Browser → CloudFront (HTTPS + CDN)
+                   │
+                   ▼
+                 S3 (Private Bucket)
+                   │
+                   ▼
+            API Gateway (HTTP API)
+                   │
+                   ▼
+              Lambda (Python)
+                   │
+                   ▼
+            DynamoDB (Visitor Counter)
 ```
+
+### Key Design Decisions
+
+* **S3 bucket is private** (secured with Origin Access Control)
+* Only **CloudFront can access S3**
+* HTTPS handled via **ACM certificate**
+* Fully serverless backend (no servers)
 
 ---
 
 # Technologies Used
 
-### Cloud
+## Cloud (AWS)
 
-* AWS S3
-* AWS CloudFront
-* AWS Lambda
-* Amazon API Gateway
-* Amazon DynamoDB
-* AWS Certificate Manager
+* Amazon S3 (static website hosting)
+* Amazon CloudFront (CDN + HTTPS)
+* AWS Lambda (serverless compute)
+* Amazon API Gateway (HTTP API)
+* Amazon DynamoDB (NoSQL database)
+* AWS Certificate Manager (SSL/TLS)
 
-### DevOps & Infrastructure
+## DevOps & Infrastructure
 
-* Terraform (planned for infrastructure provisioning)
-* GitHub Actions (planned for CI/CD)
+* Terraform (Infrastructure as Code)
+* GitHub Actions (CI/CD pipeline)
 
-### Programming
+## Programming
 
 * Python (Lambda function)
 * JavaScript (visitor counter)
-* HTML & CSS (resume website)
+* HTML & CSS (frontend)
 
 ---
 
 # Features
 
-### Static Resume Website
+## Static Resume Website
 
-The resume is built as a static HTML/CSS website and hosted on Amazon S3.
+* Built with HTML/CSS
+* Hosted on S3
+* Delivered globally via CloudFront
 
-### Global Content Delivery
+## Secure Architecture
 
-Amazon CloudFront distributes the website globally and provides HTTPS support.
+* S3 bucket is **not publicly accessible**
+* Uses **Origin Access Control (OAC)**
+* Enforces HTTPS via CloudFront
 
-### Serverless Visitor Counter
+## Serverless Visitor Counter
 
-A visitor counter was implemented using:
+Each page load triggers:
 
-* AWS Lambda (Python)
-* Amazon DynamoDB
-* Amazon API Gateway
-
-Each time the page loads:
-
-1. The frontend sends a request to an API endpoint.
-2. API Gateway triggers a Lambda function.
-3. Lambda increments the visitor counter stored in DynamoDB.
-4. The updated number is returned and displayed on the page.
+1. Frontend sends request to API
+2. API Gateway invokes Lambda
+3. Lambda updates counter in DynamoDB
+4. Updated count is returned to frontend
 
 ---
 
-# Current Status
+# CI/CD Pipeline
 
-Completed:
+This project includes a full CI/CD pipeline using GitHub Actions.
 
-* Static resume website
-* S3 static hosting
-* CloudFront distribution with HTTPS
-* Custom domain configuration
-* Lambda visitor counter
-* DynamoDB integration
-* API Gateway endpoint
-* Frontend integration with JavaScript
+### Workflow:
 
-Planned improvements:
+On every push to `main`:
 
-* Infrastructure provisioning with Terraform
-* CI/CD pipeline using GitHub Actions
-* Automated deployments
-* Project documentation and architecture diagram
+1. Deploy static files to S3
+2. Invalidate CloudFront cache
+3. Website updates automatically
+
+This enables **continuous deployment with zero manual steps**.
+
+---
+
+# Infrastructure as Code
+
+All infrastructure is provisioned using Terraform:
+
+* S3 bucket
+* CloudFront distribution
+* Origin Access Control (OAC)
+* Lambda function
+* API Gateway
+* DynamoDB table
+* IAM roles and policies
+* DNS and SSL (ACM + Route53)
+
+---
+
+# Repository Structure
+
+```
+cloud-resume/
+│
+├── frontend/          # Static website files
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── backend/           # Lambda function
+│
+├── terraform/         # Infrastructure as Code
+│
+└── .github/workflows/ # CI/CD pipeline
+```
+
+---
+
+# What I Learned
+
+* Designing serverless architectures on AWS
+* Securing S3 with CloudFront (OAC)
+* Managing infrastructure with Terraform
+* Implementing CI/CD with GitHub Actions
+* Debugging real-world issues (CORS, IAM, DNS, SSL)
+* Working with distributed systems and CDN caching
 
 ---
 
 # Author
 
 Gabriel Siqueira Müller
-Computer Engineering Student
-AWS Certified Solutions Architect – Associate
+
+Computer Engineer | Cloud Engineer
