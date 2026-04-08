@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Resume | Gabriel Müller</title>
+    <title>Cloud Resume | Gabriel Siqueira Müller</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 
     <header class="main-header">
         <div class="header-container">
-            
+
             <div class="header-badge">
                 <a href="https://www.credly.com/badges/e10c1c67-1c09-4da0-9be6-970194a67f16/public_url" target="_blank">
                     <img src="aws-saa-badge.png" alt="AWS Certified Solutions Architect">
@@ -23,18 +23,16 @@
 
             <div class="header-info">
                 <h1>Gabriel Siqueira Müller</h1>
-                <p><strong data-i18n="job_title">Computer Engineer | Cloud Engineer</strong></p>
+                <p><strong>Cloud Engineer | Backend Developer</strong></p>
                 <p>AWS Certified Solutions Architect – Associate</p>
 
                 <p class="header-links">
-                    <a href="mailto:gabrielsiqueiramuller@gmail.com">gabrielsiqueiramuller@gmail.com</a> <span class="divider">|</span>
-                    <a href="https://linkedin.com/in/gabriel-müller-a41ba5249" target="_blank">LinkedIn</a> <span class="divider">|</span>
+                    <a href="mailto:gabrielsiqueiramuller@gmail.com">gabrielsiqueiramuller@gmail.com</a>
+                    <span class="divider">|</span>
+                    <a href="https://linkedin.com/in/gabriel-müller-a41ba5249" target="_blank">LinkedIn</a>
+                    <span class="divider">|</span>
                     <a href="https://github.com/gabrielsmuller" target="_blank">GitHub</a>
                 </p>
-            </div>
-
-            <div class="header-lang">
-                <button id="lang-toggle" onclick="toggleLanguage()" class="lang-btn">🇺🇸 EN</button>
             </div>
 
         </div>
@@ -43,72 +41,77 @@
     <main>
 
         <section id="summary">
-            <h2 data-i18n="summary_header">Summary</h2>
-            <p data-i18n="summary_text">
-                Computer Engineer with professional experience in IT infrastructure and backend development,
-                currently specializing in AWS cloud architecture and infrastructure automation. Hands-on experience 
-                building serverless applications and deploying infrastructure using Terraform and CI/CD pipelines.
+            <h2>Summary</h2>
+            <p>
+                Computer Engineer with professional experience in IT infrastructure and backend development, focused on AWS cloud architecture and infrastructure automation. Hands-on experience designing and deploying serverless applications, building APIs, and provisioning infrastructure using Terraform and CI/CD pipelines.
             </p>
         </section>
 
         <section id="skills">
-            <h2 data-i18n="skills_header">Core Competencies</h2>
+            <h2>Tech Stack</h2>
             <ul>
-                <li data-i18n="skills_cloud"><strong>Cloud & DevOps:</strong> AWS, Linux, Docker, Terraform, Git, CI/CD (GitHub Actions)</li>
-                <li data-i18n="skills_prog"><strong>Programming:</strong> Python, C, C++</li>
-                <li data-i18n="skills_net"><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
-                <li data-i18n="skills_db"><strong>Databases:</strong> SQL, PostgreSQL, NoSQL</li>
+                <li><strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Linux, CI/CD (GitHub Actions)</li>
+                <li><strong>Backend:</strong> Python, REST APIs, C, C++</li>
+                <li><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
+                <li><strong>Databases:</strong> PostgreSQL, SQL, NoSQL (DynamoDB)</li>
             </ul>
         </section>
 
         <section id="cloud-projects">
-            <h2 data-i18n="cloud_projects_header">Cloud Projects</h2>
+            <h2>Cloud Projects</h2>
             <article>
-                <h3 data-i18n="crc_title">The Cloud Resume Challenge (AWS)</h3>
-                <p data-i18n="crc_desc">Developed a serverless cloud-based resume application deployed on AWS.</p>
+                <h3>The Cloud Resume Challenge (AWS)</h3>
+                <p>Built and deployed a serverless cloud-based resume application on AWS.</p>
                 <ul>
-                    <li data-i18n="crc_bullet1">Static website hosted on Amazon S3 and globally distributed via CloudFront with HTTPS</li>
-                    <li data-i18n="crc_bullet2">Serverless backend implemented with AWS Lambda (Python) and Amazon API Gateway</li>
-                    <li data-i18n="crc_bullet3">Visitor counter stored in Amazon DynamoDB and exposed through a REST API</li>
-                    <li data-i18n="crc_bullet4">Infrastructure provisioned using Terraform with CI/CD automation via GitHub Actions</li>
+                    <li>Deployed a secure static website on Amazon S3 and CloudFront, using Origin Access Control (OAC) to restrict direct access.</li>
+                    <li>Built a serverless backend API (API Gateway, AWS Lambda/Python) to interact with a DynamoDB visitor counter.</li>
+                    <li>Provisioned the entire architecture using Terraform and automated deployments via GitHub Actions.</li>
                 </ul>
                 <p>
-                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank" data-i18n="crc_link">Github Repository & Documentation</a>
+                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank">
+                        Github Repository & Documentation
+                    </a>
                 </p>
             </article>
         </section>
 
         <section id="experience">
-            <h2 data-i18n="experience_header">Professional Experience</h2>
+            <h2>Professional Experience</h2>
             <article>
-                <h3 data-i18n="vertys_title">IT Technical Analyst & Developer</h3>
-                <p><strong data-i18n="vertys_company">Vertys Energy Group</strong> <span data-i18n="vertys_date">| July 2023 – Present</span></p>
+                <h3>IT Technical Analyst & Backend Developer</h3>
+                <p><strong>Vertys Energy Group</strong> | July 2022 – Present</p>
                 <ul>
-                    <li data-i18n="vertys_bullet1">Developed API integrations between Sankhya ERP and sales/e-commerce platforms, automating data synchronization</li>
-                    <li data-i18n="vertys_bullet2">Designed and developed internal web applications including the company website and an e-commerce platform</li>
-                    <li data-i18n="vertys_bullet3">Assisted in deployment of a Linux-based server and implemented secure network file shares</li>
-                    <li data-i18n="vertys_bullet4">Maintained network infrastructure and resolved 680+ technical support tickets (4.91/5 satisfaction)</li>
+                    <li>
+                        Re-architected and replaced the legacy Sankhya ERP integration using Python, 
+                        reducing average order processing time by 66% (from 15 to 5 minutes).
+                    </li>
+                    <li>
+                        Designed and deployed a production e-commerce platform (<a href="https://vertyshome.com.br/" target="_blank">vertyshome.com.br</a>) using Vite, Python, and Supabase, featuring secure payments, authentication, and automated ERP data synchronization.
+                    </li>
+                    <li>
+                        Deployed a secure Linux-based server environment for internal file sharing and access control.
+                    </li>
+                    <li>
+                        Maintained network infrastructure and resolved 680+ technical support tickets (4.91/5 satisfaction rate).
+                    </li>
                 </ul>
             </article>
         </section>
 
-        <section id="education">
-            <h2 data-i18n="education_header">Education</h2>
-            <article>
-                <h3 data-i18n="edu_degree">Bachelor of Science in Computer Engineering</h3>
-                <p data-i18n="edu_school">Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: 2026</p>
-            </article>
+        <section id="freelance-projects">
+            <h2>B2B Projects</h2>
+            <p>Built production-grade web platforms for corporate clients, covering database design, backend development, and deployment.</p>
+            <ul>
+                <li><strong>Corporate Metrics Dashboard (<a href="https://ibdncertificacoes.com.br/" target="_blank">IBDN</a>):</strong> Engineered a custom platform with robust relational databases to track, manage, and allow partners to report environmental certification data securely.</li>
+                <li><strong>E-Learning Portal (<a href="https://www.dataworkinformatica.com.br/" target="_blank">Data Work</a>):</strong> Developed a complete online course management system featuring secure role-based access control and integrated payment APIs.</li>
+            </ul>
         </section>
 
-        <section id="other-projects">
-            <h2 data-i18n="other_projects_header">Other Technical Projects</h2>
+        <section id="education">
+            <h2>Education</h2>
             <article>
-                <h3 data-i18n="tcc_title">Autonomous and Hybrid Photovoltaic Systems Sizing Algorithm</h3>
-                <p data-i18n="tcc_desc">Developed an algorithm to optimize the sizing and efficiency of autonomous and hybrid solar energy systems.</p>
-            </article>
-            <article>
-                <h3 data-i18n="web_apps_title">Full-Stack Web Applications</h3>
-                <p data-i18n="web_apps_desc">Development of responsive web applications using modern frontend frameworks and backend services for authentication and database integration.</p>
+                <h3>Bachelor of Science in Computer Engineering</h3>
+                <p>Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: 2026</p>
             </article>
         </section>
 
@@ -117,7 +120,7 @@
     <footer>
         <hr>
         <p>
-            <span data-i18n="footer_text">You are visitor number: </span><span id="counter">Loading...</span>
+            You are visitor number: <span id="counter">Loading...</span>
         </p>
     </footer>
 
