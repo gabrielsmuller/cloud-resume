@@ -23,7 +23,7 @@
 
             <div class="header-info">
                 <h1>Gabriel Siqueira Müller</h1>
-                <p><strong>Cloud Engineer | Backend Developer</strong></p>
+                <p><strong data-i18n="job_title">Cloud Engineer | Backend Developer</strong></p>
                 <p>AWS Certified Solutions Architect – Associate</p>
 
                 <p class="header-links">
@@ -35,40 +35,44 @@
                 </p>
             </div>
 
+            <div class="header-lang">
+                <button id="lang-toggle" onclick="toggleLanguage()" class="lang-btn">🇺🇸 EN</button>
+            </div>
+
         </div>
     </header>
 
     <main>
 
         <section id="summary">
-            <h2>Summary</h2>
-            <p>
+            <h2 data-i18n="summary_header">Summary</h2>
+            <p data-i18n="summary_text">
                 Computer Engineer with professional experience in IT infrastructure and backend development, focused on AWS cloud architecture and infrastructure automation. Hands-on experience designing and deploying serverless applications, building APIs, and provisioning infrastructure using Terraform and CI/CD pipelines.
             </p>
         </section>
 
         <section id="skills">
-            <h2>Tech Stack</h2>
+            <h2 data-i18n="skills_header">Tech Stack</h2>
             <ul>
-                <li><strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Linux, CI/CD (GitHub Actions)</li>
-                <li><strong>Backend:</strong> Python, REST APIs, C, C++</li>
-                <li><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
-                <li><strong>Databases:</strong> PostgreSQL, SQL, NoSQL (DynamoDB)</li>
+                <li data-i18n="skills_cloud"><strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Linux, CI/CD (GitHub Actions)</li>
+                <li data-i18n="skills_backend"><strong>Backend:</strong> Python, REST APIs, C, C++</li>
+                <li data-i18n="skills_net"><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
+                <li data-i18n="skills_db"><strong>Databases:</strong> PostgreSQL, SQL, NoSQL (DynamoDB)</li>
             </ul>
         </section>
 
         <section id="cloud-projects">
-            <h2>Cloud Projects</h2>
+            <h2 data-i18n="cloud_projects_header">Cloud Projects</h2>
             <article>
-                <h3>The Cloud Resume Challenge (AWS)</h3>
-                <p>Built and deployed a serverless cloud-based resume application on AWS.</p>
+                <h3 data-i18n="crc_title">The Cloud Resume Challenge (AWS)</h3>
+                <p data-i18n="crc_desc">Built and deployed a serverless cloud-based resume application on AWS.</p>
                 <ul>
-                    <li>Deployed a secure static website on Amazon S3 and CloudFront, using Origin Access Control (OAC) to restrict direct access.</li>
-                    <li>Built a serverless backend API (API Gateway, AWS Lambda/Python) to interact with a DynamoDB visitor counter.</li>
-                    <li>Provisioned the entire architecture using Terraform and automated deployments via GitHub Actions.</li>
+                    <li data-i18n="crc_bullet1">Deployed a secure static website on Amazon S3 and CloudFront, using Origin Access Control (OAC) to restrict direct access.</li>
+                    <li data-i18n="crc_bullet2">Built a serverless backend API (API Gateway, AWS Lambda/Python) to interact with a DynamoDB visitor counter.</li>
+                    <li data-i18n="crc_bullet3">Provisioned the entire architecture using Terraform and automated deployments via GitHub Actions.</li>
                 </ul>
                 <p>
-                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank">
+                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank" data-i18n="crc_link">
                         Github Repository & Documentation
                     </a>
                 </p>
@@ -76,22 +80,21 @@
         </section>
 
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2 data-i18n="experience_header">Professional Experience</h2>
             <article>
-                <h3>IT Technical Analyst & Backend Developer</h3>
-                <p><strong>Vertys Energy Group</strong> | July 2022 – Present</p>
+                <h3 data-i18n="vertys_title">IT Technical Analyst & Backend Developer</h3>
+                <p><strong>Vertys Energy Group</strong> <span data-i18n="vertys_date">| July 2022 – Present</span></p>
                 <ul>
-                    <li>
-                        Re-architected and replaced the legacy Sankhya ERP integration using Python, 
-                        reducing average order processing time by 66% (from 15 to 5 minutes).
+                    <li data-i18n="vertys_bullet1">
+                        Re-architected and replaced the legacy Sankhya ERP integration using Python, reducing average order processing time by 66% (from 15 to 5 minutes).
                     </li>
-                    <li>
+                    <li data-i18n="vertys_bullet2">
                         Designed and deployed a production e-commerce platform (<a href="https://vertyshome.com.br/" target="_blank">vertyshome.com.br</a>) using Vite, Python, and Supabase, featuring secure payments, authentication, and automated ERP data synchronization.
                     </li>
-                    <li>
+                    <li data-i18n="vertys_bullet3">
                         Deployed a secure Linux-based server environment for internal file sharing and access control.
                     </li>
-                    <li>
+                    <li data-i18n="vertys_bullet4">
                         Maintained network infrastructure and resolved 680+ technical support tickets (4.91/5 satisfaction rate).
                     </li>
                 </ul>
@@ -99,19 +102,19 @@
         </section>
 
         <section id="freelance-projects">
-            <h2>B2B Projects</h2>
-            <p>Built production-grade web platforms for corporate clients, covering database design, backend development, and deployment.</p>
+            <h2 data-i18n="b2b_header">B2B Projects</h2>
+            <p data-i18n="b2b_desc">Built production-grade web platforms for corporate clients, covering database design, backend development, and deployment.</p>
             <ul>
-                <li><strong>Corporate Metrics Dashboard (<a href="https://ibdncertificacoes.com.br/" target="_blank">IBDN</a>):</strong> Engineered a custom platform with robust relational databases to track, manage, and allow partners to report environmental certification data securely.</li>
-                <li><strong>E-Learning Portal (<a href="https://www.dataworkinformatica.com.br/" target="_blank">Data Work</a>):</strong> Developed a complete online course management system featuring secure role-based access control and integrated payment APIs.</li>
+                <li data-i18n="b2b_bullet1"><strong>Corporate Metrics Dashboard (<a href="https://ibdncertificacoes.com.br/" target="_blank">IBDN</a>):</strong> Engineered a custom platform with robust relational databases to track, manage, and allow partners to report environmental certification data securely.</li>
+                <li data-i18n="b2b_bullet2"><strong>E-Learning Portal (<a href="https://www.dataworkinformatica.com.br/" target="_blank">Data Work</a>):</strong> Developed a complete online course management system featuring secure role-based access control and integrated payment APIs.</li>
             </ul>
         </section>
 
         <section id="education">
-            <h2>Education</h2>
+            <h2 data-i18n="education_header">Education</h2>
             <article>
-                <h3>Bachelor of Science in Computer Engineering</h3>
-                <p>Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: 2026</p>
+                <h3 data-i18n="edu_degree">Bachelor of Science in Computer Engineering</h3>
+                <p data-i18n="edu_school">Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: 2026</p>
             </article>
         </section>
 
@@ -120,7 +123,7 @@
     <footer>
         <hr>
         <p>
-            You are visitor number: <span id="counter">Loading...</span>
+            <span data-i18n="footer_text">You are visitor number: </span><span id="counter">Loading...</span>
         </p>
     </footer>
 
