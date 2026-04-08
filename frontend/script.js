@@ -38,8 +38,8 @@ const translations = {
 
         b2b_header: "B2B Projects",
         b2b_desc: "Built production-grade web platforms for corporate clients, covering database design, backend development, and deployment.",
-        b2b_bullet1: "<strong>Corporate Metrics Dashboard (<a href=\"https://ibdncertificacoes.com.br/\" target=\"_blank\">IBDN</a>):</strong> Engineered a custom platform with robust relational databases to track, manage, and allow partners to report environmental certification data securely.",
-        b2b_bullet2: "<strong>E-Learning Portal (<a href=\"https://www.dataworkinformatica.com.br/\" target=\"_blank\">Data Work</a>):</strong> Developed a complete online course management system featuring secure role-based access control and integrated payment APIs.",
+        b2b_bullet1: "<strong>E-Learning Portal (<a href=\"https://www.dataworkinformatica.com.br/\" target=\"_blank\">Data Work</a>):</strong> Developed a complete online course management system featuring secure role-based access control and integrated payment APIs.",
+        b2b_bullet2: "<strong>Corporate Metrics Dashboard (IBDN):</strong> Engineered a custom platform with robust relational databases to track, manage, and allow partners to report environmental certification data securely.",
 
         education_header: "Education",
         edu_degree: "Bachelor of Science in Computer Engineering",
@@ -77,8 +77,8 @@ const translations = {
 
         b2b_header: "Projetos B2B",
         b2b_desc: "Construção de plataformas web em nível de produção para clientes corporativos, abrangendo design de banco de dados, desenvolvimento backend e implantação.",
-        b2b_bullet1: "<strong>Dashboard de Métricas Corporativas (<a href=\"https://ibdncertificacoes.com.br/\" target=\"_blank\">IBDN</a>):</strong> Engenharia de uma plataforma personalizada com bancos de dados relacionais robustos para rastrear, gerenciar e permitir que parceiros relatem dados de certificação ambiental com segurança.",
-        b2b_bullet2: "<strong>Portal de E-Learning (<a href=\"https://www.dataworkinformatica.com.br/\" target=\"_blank\">Data Work</a>):</strong> Desenvolvimento de um sistema completo de gerenciamento de cursos online com controle de acesso seguro baseado em funções e APIs de pagamento integradas.",
+        b2b_bullet1: "<strong>Portal de E-Learning (<a href=\"https://www.dataworkinformatica.com.br/\" target=\"_blank\">Data Work</a>):</strong> Desenvolvimento de um sistema completo de gerenciamento de cursos online com controle de acesso seguro baseado em funções e APIs de pagamento integradas.",
+        b2b_bullet2: "<strong>Dashboard de Métricas Corporativas (IBDN):</strong> Engenharia de uma plataforma personalizada com bancos de dados relacionais robustos para rastrear, gerenciar e permitir que parceiros relatem dados de certificação ambiental com segurança.",
 
         education_header: "Formação Acadêmica",
         edu_degree: "Bacharelado em Engenharia de Computação",
