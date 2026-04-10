@@ -33,7 +33,7 @@ const translations = {
         vertys_date: "| July 2022 – Present",
         vertys_bullet1: "Re-architected and replaced the legacy Sankhya ERP integration using Python, reducing average order synchronization time by 66% (from 7.5 to 2.5 minutes).",
         vertys_bullet2: "Designed and deployed a production e-commerce platform (<a href=\"https://vertyshome.com.br/\" target=\"_blank\">vertyshome.com.br</a>) using Vite, Python, and Supabase, featuring secure payments, authentication, and automated ERP data synchronization.",
-        vertys_bullet3: "Deployed a secure Linux-based server environment for internal file sharing and access control.",
+        vertys_bullet3: "Deployed and maintained a secure Linux-based server environment, enabling internal file sharing and access control for 100+ employees.",
         vertys_bullet4: "Maintained network infrastructure and resolved 680+ technical support tickets (4.91/5 satisfaction rate).",
 
         b2b_header: "B2B Projects",
@@ -72,7 +72,7 @@ const translations = {
         vertys_date: "| Julho 2022 – Presente",
         vertys_bullet1: "Rearquitetura e substituição da integração legada do ERP Sankhya usando Python, reduzindo o tempo médio de sincronização de pedidos em 66% (de 7,5 para 2,5 minutos).",
         vertys_bullet2: "Projeção e implantação de uma plataforma de e-commerce em produção (<a href=\"https://vertyshome.com.br/\" target=\"_blank\">vertyshome.com.br</a>) usando Vite, Python e Supabase, com pagamentos seguros, autenticação e sincronização automatizada de dados do ERP.",
-        vertys_bullet3: "Implantação de um ambiente de servidor baseado em Linux seguro para compartilhamento interno de arquivos e controle de acesso.",
+        vertys_bullet3: "Implantação e manutenção de um ambiente de servidor Linux seguro, permitindo o compartilhamento interno de arquivos e controle de acesso para mais de 100 colaboradores.",
         vertys_bullet4: "Manutenção da infraestrutura de rede e resolução de mais de 680 chamados de suporte técnico (taxa de satisfação de 4,91/5).",
 
         b2b_header: "Projetos B2B",
