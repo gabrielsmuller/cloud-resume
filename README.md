@@ -1,4 +1,4 @@
-# Cloud Resume – AWS Serverless Project
+# Cloud Resume
 
 This project is my implementation of the **Cloud Resume Challenge**, a project designed to demonstrate cloud skills using AWS.
 
