@@ -1,8 +1,8 @@
 # Cloud Resume – AWS Serverless Project
 
-This project is my implementation of the **Cloud Resume Challenge**, a hands-on project designed to demonstrate practical cloud engineering skills using AWS.
+This project is my implementation of the **Cloud Resume Challenge**, a project designed to demonstrate cloud skills using AWS.
 
-The goal of the project is to build and deploy a cloud-based resume website using a fully serverless architecture.
+The goal of the project is to build and deploy a cloud-based resume website using a serverless architecture.
 
 ---
 
@@ -97,18 +97,6 @@ Completed:
 * DynamoDB integration
 * API Gateway endpoint
 * Frontend integration with JavaScript
-
-Planned improvements:
-
 * Infrastructure provisioning with Terraform
 * CI/CD pipeline using GitHub Actions
 * Automated deployments
-* Project documentation and architecture diagram
-
----
-
-# Author
-
-Gabriel Siqueira Müller
-Computer Engineering Student
-AWS Certified Solutions Architect – Associate
