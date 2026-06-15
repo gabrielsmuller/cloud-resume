@@ -1,102 +1,123 @@
-# Cloud Resume
-
-This project is my implementation of the **Cloud Resume Challenge**, a project designed to demonstrate cloud skills using AWS.
-
-The goal of the project is to build and deploy a cloud-based resume website using a serverless architecture.
-
+# Cloud Resume — gabrielsmuller.dev
+ 
+> A serverless resume website built on AWS, demonstrating cloud architecture, infrastructure-as-code, and CI/CD automation.
+ 
+**[Live Demo →](https://gabrielsmuller.dev)**
+ 
 ---
-
-# Project Overview
-
-The resume is a static website hosted on AWS and globally distributed using a CDN.
-It also includes a serverless backend that counts and stores website visits.
-
-Architecture overview:
-
+ 
+## Architecture
+ 
 ```
 User Browser
      │
      ▼
-CloudFront (CDN + HTTPS)
+CloudFront (CDN + HTTPS)          ← globally distributed, custom domain
      │
-     ▼
-S3 (Static Website Hosting)
+     ├──▶ S3 (Static Website)     ← resume HTML/CSS, OAC restricts direct access
      │
-     ▼
-API Gateway
-     │
-     ▼
-Lambda (Python)
-     │
-     ▼
-DynamoDB (Visitor Counter)
+     └──▶ API Gateway             ← REST endpoint for visitor counter
+               │
+               ▼
+           Lambda (Python)        ← increments and returns visitor count
+               │
+               ▼
+           DynamoDB               ← stores visitor counter
 ```
-
+ 
 ---
-
-# Technologies Used
-
-### Cloud
-
-* AWS S3
-* AWS CloudFront
-* AWS Lambda
-* Amazon API Gateway
-* Amazon DynamoDB
-* AWS Certificate Manager
-
-### DevOps & Infrastructure
-
-* Terraform (planned for infrastructure provisioning)
-* GitHub Actions (planned for CI/CD)
-
-### Programming
-
-* Python (Lambda function)
-* JavaScript (visitor counter)
-* HTML & CSS (resume website)
-
+ 
+## Tech Stack
+ 
+| Layer | Technology |
+|---|---|
+| Hosting | AWS S3 + CloudFront |
+| Backend | AWS Lambda (Python), API Gateway |
+| Database | Amazon DynamoDB |
+| Infrastructure | Terraform |
+| CI/CD | GitHub Actions |
+| DNS & TLS | Route 53, AWS Certificate Manager |
+ 
 ---
-
-# Features
-
-### Static Resume Website
-
-The resume is built as a static HTML/CSS website and hosted on Amazon S3.
-
-### Global Content Delivery
-
-Amazon CloudFront distributes the website globally and provides HTTPS support.
-
-### Serverless Visitor Counter
-
-A visitor counter was implemented using:
-
-* AWS Lambda (Python)
-* Amazon DynamoDB
-* Amazon API Gateway
-
-Each time the page loads:
-
-1. The frontend sends a request to an API endpoint.
-2. API Gateway triggers a Lambda function.
-3. Lambda increments the visitor counter stored in DynamoDB.
-4. The updated number is returned and displayed on the page.
-
+ 
+## Design Decisions
+ 
+**Origin Access Control (OAC) instead of OAI** — S3 bucket is fully private. CloudFront is the only authorized origin, preventing direct S3 URL access. OAC is the current AWS-recommended approach over the legacy Origin Access Identity.
+ 
+**DynamoDB over RDS** — The visitor counter is a single increment operation. DynamoDB's `UpdateItem` with `ADD` handles concurrent increments without race conditions, at a fraction of the cost of a relational database for this use case.
+ 
+**Pre-signed infrastructure** — All AWS resources are provisioned through Terraform. No manual console clicks. The entire stack can be destroyed and recreated with `terraform apply`.
+ 
 ---
-
-# Current Status
-
-Completed:
-
-* Static resume website
-* S3 static hosting
-* CloudFront distribution with HTTPS
-* Custom domain configuration
-* Lambda visitor counter
-* DynamoDB integration
-* API Gateway endpoint
-* Frontend integration with JavaScript
-* Infrastructure provisioning with Terraform
-* CI/CD pipeline using GitHub Actions
-* Automated deployments
+ 
+## Project Structure
+ 
+```
+cloud-resume/
+├── frontend/           # Static resume (HTML, CSS, JS)
+├── backend/            # Lambda function (Python)
+├── terraform/          # Infrastructure as code
+└── .github/workflows/  # CI/CD pipeline
+```
+ 
+---
+ 
+## CI/CD Pipeline
+ 
+On every push to `main`:
+ 
+```
+Push to main
+     │
+     ▼
+Run tests (backend)
+     │
+     ▼
+Terraform plan & apply
+     │
+     ▼
+Sync frontend to S3
+     │
+     ▼
+Invalidate CloudFront cache
+```
+ 
+---
+ 
+## Infrastructure
+ 
+Terraform provisions:
+ 
+- S3 bucket (private, static hosting)
+- CloudFront distribution with OAC
+- API Gateway + Lambda function
+- DynamoDB table
+- IAM roles and policies
+- ACM certificate + Route 53 DNS records
+---
+ 
+## Running Locally
+ 
+```bash
+# Backend
+cd backend
+pip install -r requirements.txt
+python -m pytest
+ 
+# Infrastructure
+cd terraform
+terraform init
+terraform plan
+```
+ 
+---
+ 
+## What I Learned
+ 
+This project is my implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev). Beyond following the spec, the most valuable parts were:
+ 
+- Understanding **why** pre-signed URLs and OAC matter from a security perspective
+- Thinking through **cost tradeoffs** between DynamoDB and RDS for a simple counter
+- Wiring together Terraform state management with a GitHub Actions deployment pipeline
+- Debugging CloudFront cache invalidation behavior after deployments
+---
