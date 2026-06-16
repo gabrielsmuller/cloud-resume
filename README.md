@@ -44,7 +44,7 @@ CloudFront (CDN + HTTPS)          ← globally distributed, custom domain
  
 **Origin Access Control (OAC) instead of OAI** — S3 bucket is fully private. CloudFront is the only authorized origin, preventing direct S3 URL access. OAC is the current AWS-recommended approach over the legacy Origin Access Identity.
  
-**DynamoDB over RDS** — The visitor counter is a single increment operation. DynamoDB's `UpdateItem` with `ADD` handles concurrent increments without race conditions, at a fraction of the cost of a relational database for this use case.
+**DynamoDB over RDS** — The visitor counter is a atomic increment operation. DynamoDB's `UpdateItem` with `ADD` handles concurrent increments without race conditions, at a fraction of the cost of a relational database for this use case.
  
 **Pre-signed infrastructure** — All AWS resources are provisioned through Terraform. No manual console clicks. The entire stack can be destroyed and recreated with `terraform apply`.
  
@@ -120,4 +120,3 @@ This project is my implementation of the [Cloud Resume Challenge](https://cloudr
 - Thinking through **cost tradeoffs** between DynamoDB and RDS for a simple counter
 - Wiring together Terraform state management with a GitHub Actions deployment pipeline
 - Debugging CloudFront cache invalidation behavior after deployments
----
