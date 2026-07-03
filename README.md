@@ -1,4 +1,4 @@
-# Cloud Resume — gabrielsmuller.dev
+# Cloud Resume
  
 > A serverless resume website built on AWS, demonstrating cloud architecture, infrastructure-as-code, and CI/CD automation.
  
