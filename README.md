@@ -1,13 +1,11 @@
 # Cloud Resume
- 
-> A serverless resume website built on AWS, demonstrating cloud architecture, infrastructure-as-code, and CI/CD automation.
- 
+
+> A serverless resume site on AWS, provisioned with Terraform and deployed via CI/CD.
+
 **[Live Demo →](https://gabrielsmuller.dev)**
- 
----
- 
+
 ## Architecture
- 
+
 ```
 User Browser
      │
@@ -24,99 +22,33 @@ CloudFront (CDN + HTTPS)          ← globally distributed, custom domain
                ▼
            DynamoDB               ← stores visitor counter
 ```
- 
----
- 
+
 ## Tech Stack
- 
+
 | Layer | Technology |
 |---|---|
-| Hosting | AWS S3 + CloudFront |
-| Backend | AWS Lambda (Python), API Gateway |
-| Database | Amazon DynamoDB |
+| Hosting | S3 + CloudFront |
+| Backend | Lambda (Python), API Gateway |
+| Database | DynamoDB |
 | Infrastructure | Terraform |
 | CI/CD | GitHub Actions |
-| DNS & TLS | Route 53, AWS Certificate Manager |
- 
----
- 
-## Design Decisions
- 
-**Origin Access Control (OAC) instead of OAI** - S3 bucket is fully private. CloudFront is the only authorized origin, preventing direct S3 URL access. OAC is the current AWS-recommended approach over the legacy Origin Access Identity.
- 
-**DynamoDB over RDS** - The visitor counter is a atomic increment operation. DynamoDB's `UpdateItem` with `ADD` handles concurrent increments without race conditions, at a fraction of the cost of a relational database for this use case.
- 
-**Pre-signed infrastructure** - All AWS resources are provisioned through Terraform. No manual console clicks. The entire stack can be destroyed and recreated with `terraform apply`.
- 
----
- 
-## Project Structure
- 
-```
-cloud-resume/
-├── frontend/           # Static resume (HTML, CSS, JS)
-├── backend/            # Lambda function (Python)
-├── terraform/          # Infrastructure as code
-└── .github/workflows/  # CI/CD pipeline
-```
- 
----
- 
-## CI/CD Pipeline
- 
-On every push to `main`:
- 
-```
-Push to main
-     │
-     ▼
-Run tests (backend)
-     │
-     ▼
-Terraform plan & apply
-     │
-     ▼
-Sync frontend to S3
-     │
-     ▼
-Invalidate CloudFront cache
-```
- 
----
- 
-## Infrastructure
- 
-Terraform provisions:
- 
-- S3 bucket (private, static hosting)
-- CloudFront distribution with OAC
-- API Gateway + Lambda function
-- DynamoDB table
-- IAM roles and policies
-- ACM certificate + Route 53 DNS records
----
- 
-## Running Locally
- 
+| DNS & TLS | Route 53, ACM |
+
+Everything is provisioned with Terraform. On push to `main`, GitHub Actions runs tests, applies the infrastructure, syncs the frontend to S3, and invalidates the CloudFront cache.
+
+## Key decisions
+
+**OAC over the legacy OAI** - the S3 bucket is private; CloudFront is the only authorized origin, so the site can't be reached by direct S3 URL.
+
+**DynamoDB over RDS** - the counter is a atomic increment. DynamoDB's `UpdateItem ADD` handles concurrent writes with no race condition, at lower cost and overhead than a relational database.
+
+## Run locally
+
 ```bash
-# Backend
-cd backend
-pip install -r requirements.txt
-python -m pytest
- 
-# Infrastructure
-cd terraform
-terraform init
-terraform plan
+cd backend && pip install -r requirements.txt && python -m pytest
+cd ../terraform && terraform init && terraform plan
 ```
- 
+
 ---
- 
-## What I Learned
- 
-This project is my implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev). Beyond following the spec, the most valuable parts were:
- 
-- Understanding **why** pre-signed URLs and OAC matter from a security perspective
-- Thinking through **cost tradeoffs** between DynamoDB and RDS for a simple counter
-- Wiring together Terraform state management with a GitHub Actions deployment pipeline
-- Debugging CloudFront cache invalidation behavior after deployments
+
+My implementation of the [Cloud Resume Challenge](https://cloudresumechallenge.dev).
