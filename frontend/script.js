@@ -10,7 +10,7 @@ const translations = {
         job_title: "Backend & Cloud Developer",
         
         summary_header: "Summary",
-        summary_text: "Backend & Cloud Developer and Computer Engineering student with professional experience in backend development, systems integration, IT infrastructure, and business process automation. AWS Certified Solutions Architect – Associate with hands-on experience designing and deploying serverless applications, building REST APIs, and provisioning cloud infrastructure using Terraform and CI/CD pipelines.",
+        summary_text: "Backend & Cloud Developer and Computer Engineering student with professional experience in backend development, data integration, IT infrastructure, and business process automation. AWS Certified Solutions Architect – Associate with hands-on experience designing serverless applications, building REST APIs, developing data pipelines, and provisioning cloud infrastructure with Terraform and CI/CD.",
         
         skills_header: "Tech Stack",
         skills_cloud: "<strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Linux, CI/CD (GitHub Actions)",
@@ -39,7 +39,7 @@ const translations = {
         vertys_title: "Systems Analyst (Backend Development & Infrastructure)",
         vertys_date: "| July 2022 – Present",
         vertys_bullet1: "Re-architected and replaced the legacy Sankhya ERP integration using Python, reducing average order synchronization time by 66%, from 7.5 to 2.5 minutes.",
-        vertys_bullet2: "Designed and deployed a production e-commerce platform (<a href=\"https://lojavertys.com.br\" target=\"_blank\">lojavertys.com.br</a>) using Vite, Python, and Supabase, featuring secure payments, authentication, and automated ERP data synchronization.",
+        vertys_bullet2: "Designed and implemented a serverless data lake using Amazon S3, Lambda, EventBridge, Parquet, Glue, and Athena, migrating data from existing Python/PostgreSQL pipelines into structured analytical datasets; integrated Amazon Bedrock to enable natural-language business analysis over validated company data.",
         vertys_bullet3: "Deployed and maintained a secure Linux-based server environment, enabling internal file sharing and access control for more than 100 employees.",
         vertys_bullet4: "Maintained network infrastructure and resolved more than 680 technical support tickets, achieving a 4.91/5 user satisfaction rating.",
 
@@ -53,7 +53,7 @@ const translations = {
         job_title: "Desenvolvedor Backend & Cloud",
         
         summary_header: "Resumo",
-        summary_text: "Desenvolvedor Backend & Cloud e estudante de Engenharia de Computação com experiência profissional em desenvolvimento backend, integração de sistemas, infraestrutura de TI e automação de processos de negócios. AWS Certified Solutions Architect – Associate com experiência prática no design e implantação de aplicações serverless, criação de APIs REST e provisionamento de infraestrutura em nuvem usando Terraform e pipelines de CI/CD.",
+        summary_text: "Desenvolvedor Backend & Cloud e estudante de Engenharia de Computação com experiência profissional em desenvolvimento backend, integração de dados, infraestrutura de TI e automação de processos de negócios. AWS Certified Solutions Architect – Associate com experiência prática no design de aplicações serverless, criação de APIs REST, desenvolvimento de pipelines de dados e provisionamento de infraestrutura em nuvem usando Terraform e CI/CD.",
         
         skills_header: "Tecnologias",
         skills_cloud: "<strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Linux, CI/CD (GitHub Actions)",
@@ -82,7 +82,7 @@ const translations = {
         vertys_title: "Analista de Sistemas (Desenvolvimento Backend e Infraestrutura)",
         vertys_date: "| Julho 2022 – Presente",
         vertys_bullet1: "Rearquitetura e substituição da integração legada do ERP Sankhya usando Python, reduzindo o tempo médio de sincronização de pedidos em 66%, de 7,5 para 2,5 minutos.",
-        vertys_bullet2: "Projeção e implantação de uma plataforma de e-commerce em produção (<a href=\"https://lojavertys.com.br\" target=\"_blank\">lojavertys.com.br</a>) usando Vite, Python e Supabase, com pagamentos seguros, autenticação e sincronização automatizada de dados do ERP.",
+        vertys_bullet2: "Projeto e implementsção de um data lake serverless usando Amazon S3, Lambda, EventBridge, Parquet, Glue e Athena, migrando dados de pipelines Python/PostgreSQL existentes para conjuntos de dados analíticos estruturados; integração do Amazon Bedrock para permitir análise de negócios em linguagem natural sobre dados validados da empresa.",
         vertys_bullet3: "Implantação e manutenção de um ambiente de servidor Linux seguro, permitindo o compartilhamento interno de arquivos e controle de acesso para mais de 100 colaboradores.",
         vertys_bullet4: "Manutenção da infraestrutura de rede e resolução de mais de 680 chamados de suporte técnico, alcançando uma taxa de satisfação do usuário de 4,91/5.",
 
