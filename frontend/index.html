@@ -1,142 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Resume | Gabriel Siqueira Müller</title>
+    <title>Gabriel Siqueira Müller | Analista de Sistemas</title>
+    <meta name="description" content="Analista de Sistemas e estudante de Engenharia da Computação. Experiência com Python, SQL, dbt, integração de sistemas e plataformas de dados na AWS.">
+    <link rel="canonical" href="https://gabrielsmuller.dev/">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-
+    <a class="skip-link" href="#main-content">Ir para o conteúdo / Skip to content</a>
     <header class="main-header">
         <div class="header-container">
-
             <div class="header-badge">
-                <a href="https://www.credly.com/badges/e10c1c67-1c09-4da0-9be6-970194a67f16/public_url" target="_blank">
-                    <img src="aws-saa-badge.png" alt="AWS Certified Solutions Architect">
+                <a href="https://www.credly.com/badges/e10c1c67-1c09-4da0-9be6-970194a67f16/public_url" target="_blank" rel="noopener noreferrer">
+                    <img src="aws-saa-badge.png" alt="AWS Certified Solutions Architect – Associate" width="145">
                 </a>
             </div>
-
             <div class="header-info">
                 <h1>Gabriel Siqueira Müller</h1>
-                <p><strong data-i18n="job_title">Backend & Cloud Developer</strong></p>
+                <p><strong data-i18n="job_title">Analista de Sistemas | Engenharia de Dados e Analytics</strong></p>
                 <p>AWS Certified Solutions Architect – Associate</p>
-
+                <p data-i18n="location">Toledo, Paraná, Brasil</p>
                 <p class="header-links">
                     <a href="mailto:gabrielsiqueiramuller@gmail.com">gabrielsiqueiramuller@gmail.com</a>
-                    <span class="divider">|</span>
-                    <a href="https://linkedin.com/in/gabriel-müller-a41ba5249" target="_blank">LinkedIn</a>
-                    <span class="divider">|</span>
-                    <a href="https://github.com/gabrielsmuller" target="_blank">GitHub</a>
+                    <span class="divider" aria-hidden="true">|</span>
+                    <a href="https://www.linkedin.com/in/gabrielsmuller/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <span class="divider" aria-hidden="true">|</span>
+                    <a href="https://github.com/gabrielsmuller" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </p>
             </div>
-
             <div class="header-lang">
-                <button id="lang-toggle" onclick="toggleLanguage()" class="lang-btn">🇺🇸 EN</button>
+                <button id="lang-toggle" type="button" class="lang-btn" aria-label="Switch to English">EN</button>
             </div>
-
         </div>
     </header>
-
-    <main>
-
+    <main id="main-content">
         <section id="summary">
-            <h2 data-i18n="summary_header">Summary</h2>
-            <p data-i18n="summary_text">
-                Backend & Cloud Developer and Computer Engineering student with professional experience in backend development, data integration, IT infrastructure, and business process automation. AWS Certified Solutions Architect – Associate with hands-on experience designing serverless applications, building REST APIs, developing data pipelines, and provisioning cloud infrastructure with Terraform and CI/CD.
-            </p>
+            <h2 data-i18n="summary_header">Sobre</h2>
+            <p data-i18n="summary_text">Sou Analista de Sistemas e estudante de Engenharia da Computação na UTFPR. Trabalho com desenvolvimento, integração de sistemas e automação de processos, com foco atual em engenharia de dados e analytics engineering. Na Vertys Energy Group, atuo na construção de uma plataforma de dados que transforma informações do ERP Sankhya em modelos analíticos para o negócio, com dbt, SQL e AWS. Tenho certificação AWS Solutions Architect – Associate e experiência com aplicações serverless e IA generativa conectada a dados estruturados.</p>
         </section>
-
+        <section id="experience">
+            <h2 data-i18n="experience_header">Experiência profissional</h2>
+            <article>
+                <h3 data-i18n="vertys_title">Analista de Sistemas</h3>
+                <p><strong>Vertys Energy Group</strong></p>
+                <p class="experience-date" data-i18n="vertys_date">Julho de 2022 - atual | Atuação em TI desde 2023</p>
+                <h4 data-i18n="data_heading">Plataforma de dados e analytics</h4>
+                <ul>
+    <li data-i18n="data_model">Modelei a camada analítica de vendas com dbt e SQL em star schema: fatos de notas, itens e conferências; dimensões de cliente, produto, vendedor, empresa e calendário; métricas por negócio e empresa nas granularidades dia, mês e ano.</li>
+    <li data-i18n="data_quality">Implementei testes de unicidade, preenchimento e integridade referencial, além de reconciliação dos resultados com relatórios oficiais do ERP até o centavo. Traduzi regras comerciais e financeiras em modelos documentados, incluindo o tratamento de kits sem dupla contagem de receita.</li>
+    <li data-i18n="data_pipeline">Construí um pipeline ELT em arquitetura medalhão na AWS, com Step Functions, Lambda, S3, Glue Data Catalog, Athena e tabelas Apache Iceberg. A carga diária atualiza as três camadas em aproximadamente 2,5 minutos, nas condições da implantação inicial. Infraestrutura em Terraform e implantação com GitHub Actions.</li>
+    <li data-i18n="data_ai">Desenvolvi um assistente com Amazon Bedrock integrado ao WhatsApp para a diretoria consultar a camada ouro em linguagem natural. Novas versões são avaliadas com perguntas reais do negócio; custo estimado de US$ 0,02 por pergunta nas condições observadas.</li>
+</ul>
+                <h4 data-i18n="integration_heading">Integrações e sistemas</h4>
+                <ul>
+    <li data-i18n="integration_impact">Rearquitetei e implantei, com a equipe interna, a integração entre o ERP Sankhya e a plataforma Solaryum em Python e AWS serverless. O intervalo de sincronização passou de 15 para 1 minuto, e o tempo médio de 7,5 minutos para 30 segundos: redução de aproximadamente 93%.</li>
+    <li data-i18n="integration_ops">Implementei controle de execuções simultâneas, rastreabilidade em DynamoDB, auditoria de falhas e alertas. O portal de monitoramento utiliza Cognito, API Gateway, Lambda, S3 e CloudFront. Terraform e GitHub Actions sustentam a infraestrutura e o deploy, com custo operacional de centavos por mês nas condições atuais.</li>
+    <li data-i18n="integration_etl">Desenvolvi rotinas ETL com Python e SQL para integrar ERP, APIs, CSV e Excel a PostgreSQL e ao data lake.</li>
+</ul>
+                <p class="supporting-detail" data-i18n="infra_history">Minha atuação também inclui infraestrutura Linux para mais de 100 funcionários e resolução de mais de 680 chamados, com satisfação de 4,91/5.</p>
+            </article>
+            <article>
+                <h3 data-i18n="datawork_title">Desenvolvedor autônomo</h3>
+                <p><strong>Data Work Informática</strong></p>
+                <p class="experience-date" data-i18n="datawork_date">Março de 2026 - atual</p>
+                <ul>
+    <li data-i18n="datawork_bullet">Desenvolvi e mantenho a integração da API de cobranças do Asaas (boletos) com a plataforma de cursos da Data Work Informática. A solução está em produção, com cerca de R$ 10 mil em cobranças por mês.</li>
+</ul>
+            </article>
+        </section>
         <section id="skills">
-            <h2 data-i18n="skills_header">Tech Stack</h2>
+            <h2 data-i18n="skills_header">Competências</h2>
             <ul>
-                <li data-i18n="skills_cloud"><strong>Cloud & DevOps:</strong> AWS, Terraform, Docker, Linux, CI/CD (GitHub Actions)</li>
-                <li data-i18n="skills_backend"><strong>Backend:</strong> Python, FastAPI, REST APIs, C, C++</li>
-                <li data-i18n="skills_net"><strong>Networking:</strong> TCP/IP, DNS, Routing, NAT, ACLs</li>
-                <li data-i18n="skills_db"><strong>Databases:</strong> PostgreSQL, DynamoDB</li>
-            </ul>
+    <li data-i18n="skills_data"><strong>Dados:</strong> SQL, dbt, modelagem dimensional, qualidade de dados, testes, ETL/ELT, arquitetura medalhão, Apache Iceberg, PostgreSQL</li>
+    <li data-i18n="skills_cloud"><strong>Cloud:</strong> AWS (Athena, Glue Data Catalog, S3, Step Functions, Lambda, EventBridge, DynamoDB, Bedrock, CloudWatch, IAM), Terraform</li>
+    <li data-i18n="skills_backend"><strong>Desenvolvimento:</strong> Python, FastAPI, APIs REST, integração de sistemas e ERP, Docker, Linux</li>
+    <li data-i18n="skills_practices"><strong>Práticas:</strong> Git/GitHub, CI/CD com GitHub Actions, documentação técnica, testes automatizados, familiaridade com Kanban e Scrum</li>
+    <li data-i18n="skills_languages"><strong>Idiomas:</strong> português nativo e inglês avançado (C1, autoavaliação)</li>
+</ul>
         </section>
-
         <section id="cloud-projects">
-            <h2 data-i18n="cloud_projects_header">Cloud Projects</h2>
-            
+            <h2 data-i18n="cloud_projects_header">Projetos pessoais</h2>
             <article>
                 <h3 data-i18n="miniloom_title">Mini Loom</h3>
-                <p data-i18n="miniloom_desc">A serverless video-sharing platform: upload a video, get a shareable link.</p>
+                <p data-i18n="miniloom_desc">Plataforma serverless de compartilhamento de vídeos: upload de arquivos e geração de links compartilháveis.</p>
                 <ul>
-                    <li data-i18n="miniloom_bullet1">Built a serverless backend using FastAPI on AWS Lambda and API Gateway, with direct-to-S3 uploads through pre-signed URLs.</li>
-                    <li data-i18n="miniloom_bullet2">Implemented authentication with Amazon Cognito federated to Google, Aurora Serverless PostgreSQL, and an SQS-driven Lambda worker for asynchronous thumbnail generation.</li>
-                    <li data-i18n="miniloom_bullet3">Connected to Aurora through the RDS Data API instead of using a VPC and NAT Gateway, reducing infrastructure complexity and keeping estimated idle costs at approximately $0.70 per month.</li>
-                    <li data-i18n="miniloom_bullet4">Provisioned the complete infrastructure with Terraform and automated deployments using GitHub Actions with OIDC authentication.</li>
-                </ul>
-                <p>
-                    <a href="#" target="_blank" data-i18n="miniloom_link">
-                        GitHub Repository & Documentation
-                    </a>
-                </p>
+    <li data-i18n="miniloom_bullet1">Backend em Python e FastAPI no AWS Lambda, com API Gateway e uploads diretos para o S3 por URLs pré-assinadas.</li>
+    <li data-i18n="miniloom_bullet2">Autenticação com Cognito e Google, persistência em Aurora Serverless PostgreSQL via RDS Data API e processamento assíncrono de miniaturas com SQS, Lambda e FFmpeg.</li>
+    <li data-i18n="miniloom_bullet3">Infraestrutura em Terraform e CI/CD com GitHub Actions e OIDC; testes automatizados, permissões IAM restritas e fila de mensagens não processadas (DLQ).</li>
+</ul>
+                <p><a href="https://github.com/gabrielsmuller/mini-loom" target="_blank" rel="noopener noreferrer" data-i18n="miniloom_link">Código e documentação no GitHub</a></p>
             </article>
-
             <article>
-                <h3 data-i18n="crc_title">The Cloud Resume Challenge (AWS)</h3>
-                <p data-i18n="crc_desc">A serverless resume website deployed on AWS.</p>
+                <h3 data-i18n="crc_title">Cloud Resume Challenge</h3>
+                <p data-i18n="crc_desc">Este site também é um projeto de arquitetura serverless na AWS.</p>
                 <ul>
-                    <li data-i18n="crc_bullet1">Deployed a secure static website using Amazon S3 and CloudFront with Origin Access Control (OAC) to restrict direct access.</li>
-                    <li data-i18n="crc_bullet2">Built a serverless backend API using API Gateway and AWS Lambda (Python), backed by a DynamoDB visitor counter.</li>
-                    <li data-i18n="crc_bullet3">Provisioned the infrastructure with Terraform and automated deployments using GitHub Actions.</li>
-                </ul>
-                <p>
-                    <a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank" data-i18n="crc_link">
-                        GitHub Repository & Documentation
-                    </a>
-                </p>
+    <li data-i18n="crc_bullet1">Frontend em S3 e CloudFront, com Origin Access Control para restringir o acesso direto ao bucket.</li>
+    <li data-i18n="crc_bullet2">Contador de visitantes com API Gateway, Lambda em Python e DynamoDB.</li>
+    <li data-i18n="crc_bullet3">Infraestrutura em Terraform e publicação do frontend com GitHub Actions, sincronização no S3 e invalidação de cache do CloudFront.</li>
+</ul>
+                <p><a href="https://github.com/gabrielsmuller/cloud-resume" target="_blank" rel="noopener noreferrer" data-i18n="crc_link">Código e documentação no GitHub</a></p>
             </article>
         </section>
-
-        <section id="experience">
-            <h2 data-i18n="experience_header">Professional Experience</h2>
-            <article>
-                <h3 data-i18n="vertys_title">Systems Analyst (Backend Development & Infrastructure)</h3>
-                <p><strong>Vertys Energy Group</strong> <span data-i18n="vertys_date">| July 2022 – Present</span></p>
-                <ul>
-                    <li data-i18n="vertys_bullet1">
-                        Re-architected and migrated the legacy integration between Sankhya ERP and sales platforms to AWS using Python and serverless services, reducing average synchronization time by 93%, from 7.5 minutes to 30 seconds; built a secure web portal using Cognito, API Gateway, Lambda, CloudFront, and S3 for monitoring orders and integration data.
-                    </li>
-                    <li data-i18n="vertys_bullet2">
-                        Designed and implemented a serverless data lake using Amazon S3, Lambda, EventBridge, Parquet, Glue, and Athena, migrating data from existing Python/PostgreSQL pipelines into structured analytical datasets; integrated Amazon Bedrock to enable natural-language business analysis over validated company data.
-                    </li>
-                    <li data-i18n="vertys_bullet3">
-                        Deployed and maintained a secure Linux-based server environment, enabling internal file sharing and access control for more than 100 employees.
-                    </li>
-                    <li data-i18n="vertys_bullet4">
-                        Maintained network infrastructure and resolved more than 680 technical support tickets, achieving a 4.91/5 user satisfaction rating.
-                    </li>
-                </ul>
-            </article>
-        </section>
-
         <section id="education">
-            <h2 data-i18n="education_header">Education</h2>
+            <h2 data-i18n="education_header">Formação e certificação</h2>
             <article>
-                <h3 data-i18n="edu_degree">Bachelor of Science in Computer Engineering</h3>
-                <p data-i18n="edu_school">Universidade Tecnológica Federal do Paraná (UTFPR) – Expected Graduation: December 2026</p>
+                <h3 data-i18n="edu_degree">Bacharelado em Engenharia da Computação</h3>
+                <p data-i18n="edu_school">Universidade Tecnológica Federal do Paraná (UTFPR) | Conclusão prevista: dezembro de 2026</p>
+            </article>
+            <article>
+                <h3>AWS Certified Solutions Architect – Associate</h3>
+                <p data-i18n="cert_date">Obtida em fevereiro de 2026 | Válida até fevereiro de 2029</p>
+                <p><a href="https://www.credly.com/badges/e10c1c67-1c09-4da0-9be6-970194a67f16/public_url" target="_blank" rel="noopener noreferrer" data-i18n="cert_link">Ver credencial no Credly</a></p>
             </article>
         </section>
-
     </main>
-
     <footer>
         <hr>
-        <p>
-            <span data-i18n="footer_text">You are visitor number: </span><span id="counter">Loading...</span>
-        </p>
+        <p><span data-i18n="footer_text">Você é o visitante número: </span><span id="counter" role="status">Carregando...</span></p>
     </footer>
-
-    <script src="script.js"></script>
-
 </body>
-
 </html>

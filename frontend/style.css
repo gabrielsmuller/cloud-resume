@@ -91,6 +91,50 @@ article {
     margin-bottom: 18px;
 }
 
+article:last-child {
+    margin-bottom: 0;
+}
+
+h4 {
+    margin: 18px 0 10px;
+    font-size: 1rem;
+}
+
+article p + ul {
+    margin-top: 12px;
+}
+
+.experience-date, .supporting-detail {
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.supporting-detail {
+    margin-top: 16px;
+}
+
+a, p, li {
+    overflow-wrap: anywhere;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 16px;
+    top: -100px;
+    z-index: 1;
+    background: white;
+    padding: 10px 16px;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
 /* Links */
 
 a {
@@ -114,7 +158,7 @@ footer {
 
 /* Visitor counter */
 
-#contador-visitas {
+#counter {
     font-weight: bold;
     color: #2563eb;
 }
@@ -139,7 +183,7 @@ footer {
 }
 
 #summary p {
-    text-align: justify;
+    text-align: left;
     line-height: 1.6;
 }
 
@@ -171,6 +215,7 @@ footer {
 
 .header-info {
     flex: 2;
+    min-width: 0;
     text-align: center;
 }
 
@@ -178,7 +223,7 @@ footer {
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 2.5rem;
-    white-space: nowrap;
+    white-space: normal;
 }
 
 .header-info p {
@@ -202,7 +247,7 @@ footer {
 
 /* Mobile Responsiveness */
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
     .header-container {
         flex-direction: column;
         padding-top: 30px;
@@ -237,5 +282,20 @@ footer {
     
     .divider {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 24px 12px;
+    }
+
+    section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .header-info h1 {
+        font-size: 1.75rem;
     }
 }

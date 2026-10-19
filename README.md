@@ -34,7 +34,16 @@ CloudFront (CDN + HTTPS)          ← globally distributed, custom domain
 | CI/CD | GitHub Actions |
 | DNS & TLS | Route 53, ACM |
 
-Everything is provisioned with Terraform. On push to `main`, GitHub Actions runs tests, applies the infrastructure, syncs the frontend to S3, and invalidates the CloudFront cache.
+Infrastructure is defined in Terraform. On push to `main`, the current GitHub Actions workflow syncs `frontend/` to S3 and invalidates the CloudFront cache. It does not run tests or apply Terraform.
+
+## Resume content
+
+The site presents professional experience in data platforms, analytics engineering, systems integration and AWS, followed by skills, personal projects, education and certification.
+
+- `frontend/index.html` includes the complete Portuguese content for readers without JavaScript.
+- `frontend/script.js` contains Portuguese and English translations. Update both languages when changing content.
+- Language selection follows a saved preference or the browser language. The toggle updates the document language, title and description.
+- The visitor counter uses the existing API Gateway endpoint and displays a localized fallback if the service is unavailable.
 
 ## Key decisions
 
@@ -42,12 +51,15 @@ Everything is provisioned with Terraform. On push to `main`, GitHub Actions runs
 
 **DynamoDB over RDS** - the counter is a atomic increment. DynamoDB's `UpdateItem ADD` handles concurrent writes with no race condition, at lower cost and overhead than a relational database.
 
-## Run locally
+## Preview locally
 
 ```bash
-cd backend && pip install -r requirements.txt && python -m pytest
-cd ../terraform && terraform init && terraform plan
+python -m http.server 8000 --directory frontend
 ```
+
+Open `http://localhost:8000`. No frontend build or package installation is required. Loading the page calls the live visitor-counter endpoint.
+
+Check JavaScript syntax with `node --check frontend/script.js`. Manage Terraform separately when infrastructure changes are needed.
 
 ---
 
