@@ -187,6 +187,10 @@ footer {
     line-height: 1.6;
 }
 
+#summary p + p {
+    margin-top: 14px;
+}
+
 .main-header {
     width: 100%;
     padding: 40px 0;
