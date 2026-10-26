@@ -95,6 +95,12 @@ article:last-child {
     margin-bottom: 0;
 }
 
+#experience article + article {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+    margin-top: 24px;
+}
+
 h4 {
     margin: 18px 0 10px;
     font-size: 1rem;
